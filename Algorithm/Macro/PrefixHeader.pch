@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  Algorithm
+//
+//  Created by ma qi on 2021/2/2.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "DeviceTool.h"
+#import "AlgorithmHeader.h"
+
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
+
+#endif /* PrefixHeader_pch */
