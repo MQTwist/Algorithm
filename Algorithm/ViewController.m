@@ -8,6 +8,8 @@
 #import "ViewController.h"
 #import "FibonacciVC.h"
 #import "CoinChangeVC.h"
+#import "FullPenetrationVC.h"
+#import "N_QueenVC.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -22,6 +24,7 @@ static NSString *const cellId = @"cellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"算法学习";
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(HEIGHT_TOP);
@@ -59,7 +62,11 @@ static NSString *const cellId = @"cellId";
     return @[@{@"title":@"斐波那契数列",
                @"class":FibonacciVC.class},
              @{@"title":@"凑零钱",
-               @"class":CoinChangeVC.class}];
+               @"class":CoinChangeVC.class},
+             @{@"title":@"全排列",
+               @"class":FullPenetrationVC.class},
+             @{@"title":@"N皇后",
+               @"class":N_QueenVC.class}];
 }
 
 #pragma mark -

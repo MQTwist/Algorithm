@@ -32,7 +32,7 @@ using namespace std;
 - (void)normal {
     NSTimeInterval interval = [[NSDate date] timeIntervalSince1970];
     vector<int> coins = {1, 2, 5};
-    int a = coinChange(coins, 33);
+    int a = coinChange(coins, 11);
     NSTimeInterval curInterval = [[NSDate date] timeIntervalSince1970];
     NSLog(@"%d, %f", a, curInterval - interval);
 }
@@ -41,10 +41,11 @@ int coinChange(vector<int>& coins, int amount) {
     vector<int> dp(amount + 1, amount + 1);
     dp[0] = 0;
     for (int i = 0; i < dp.size(); i++) {
+        NSLog(@"i= %d, %d", i, dp[i]);
         for (int coin : coins) {
-            NSLog(@"i= %d, %d", i, dp[i]);
             if (i - coin < 0) continue;
             dp[i] = min(dp[i], 1 + dp[i - coin]);
+            NSLog(@"i= %d, after:%d", i, dp[i]);
         }
     }
     return (dp[amount] == amount + 1) ? -1 : dp[amount];
